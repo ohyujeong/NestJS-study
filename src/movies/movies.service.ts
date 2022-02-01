@@ -5,7 +5,7 @@ import { Movie } from './entities/movie.entity';
 
 @Injectable()
 export class MoviesService {
-    constructor(private readonly logger = new Logger(MoviesService.name)){}
+    private readonly logger = new Logger(MoviesService.name);
     private movies : Movie[] = [];
 
     getAll(): Movie[] {
