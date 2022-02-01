@@ -5,7 +5,6 @@ import { Movie } from './entities/movie.entity';
 
 @Injectable()
 export class MoviesService {
-    private readonly logger = new Logger(MoviesService.name);
     private movies : Movie[] = [];
 
     getAll(): Movie[] {
@@ -34,7 +33,6 @@ export class MoviesService {
 
     update(id: number, updateData:UpdateMovieDto){
         const movie = this.getOne(id);
-        this.logger.log("무비" + movie);
         this.deleteOne(id);
         this.movies.push({ ...movie, ...updateData });
     }
